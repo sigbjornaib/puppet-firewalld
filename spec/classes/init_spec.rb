@@ -38,7 +38,8 @@ describe 'firewalld' do
         purge_direct_rules: true,
         purge_direct_chains: true,
         purge_direct_passthroughs: true,
-        purge_unknown_ipsets: true
+        purge_unknown_ipsets: true,
+        purge_zones: true
       }
     end
 
@@ -56,6 +57,11 @@ describe 'firewalld' do
 
     it do
       is_expected.to contain_resources('firewalld_ipset').
+        with_purge(true)
+    end
+
+    it do
+      is_expected.to contain_resources('firewalld_zone').
         with_purge(true)
     end
   end
