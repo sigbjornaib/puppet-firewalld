@@ -50,7 +50,7 @@ class firewalld (
   Boolean                                                       $purge_direct_chains       = false,
   Boolean                                                       $purge_direct_passthroughs = false,
   Boolean                                                       $purge_unknown_ipsets      = false,
-  Boolean $purge_zones               = false,
+  Boolean                                                       $purge_zones               = false,
   Optional[String]                                              $default_zone              = undef,
   Optional[Enum['off','all','unicast','broadcast','multicast']] $log_denied                = undef,
   Optional[Enum['yes', 'no']]                                   $cleanup_on_exit           = undef,
